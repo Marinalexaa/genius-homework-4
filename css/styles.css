@@ -102,6 +102,14 @@ address {
 .section {
   padding: 48px 0;
 }
+.visualy-hidden {
+  position: absolute;
+  left: -9999em;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 /* Button */
 button {
   color: var(--color-primary-light);
@@ -116,6 +124,7 @@ button {
   gap: 10px;
   border-radius: 32px;
   padding: 16px 32px;
+  transition: color 0.2s, border 0.2s, background-color 0.2s;
 }
 button:hover {
   color: var(--color-primary-dark);
@@ -123,29 +132,16 @@ button:hover {
   background-color: transparent;
 }
 
-.contact-button {
-  width: 300px;
-  height: 60px;
-  top: 20px;
-  left: 20px;
-  gap: 10px;
-  border-radius: 32px;
-  padding: 16px 32px;
-}
-
 /* Header */
+
 .social-icons {
   fill: var(--color-primary-dark);
+  transition: fill 0.2s;
+}
+.social-icons:hover {
+  fill: var(--color-brand);
 }
 
-.heder-hero-section {
-  width: 100%;
-  margin: 0 auto;
-  background: linear-gradient(to left, rgba(255, 255, 255, 0) 50%, #fff 60%),
-    url("../images/Hero-image.png");
-  background-repeat: no-repeat;
-  background-position: right center;
-}
 .header-container {
   display: flex;
   align-items: center;
@@ -155,6 +151,10 @@ button:hover {
 .header {
   background: rgba(255, 255, 255, 0.25); /* Білий колір із 60% прозорістю */
   backdrop-filter: blur(10px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .header-nav {
@@ -173,6 +173,7 @@ button:hover {
 .link {
   color: var(--color-primary-dark);
   text-decoration: none;
+  transition: color 0.2s;
 }
 .link:hover {
   color: var(--color-brand);
@@ -183,8 +184,18 @@ button:hover {
 }
 
 /* Hero-section */
+
+.hero-section {
+  width: 100%;
+  margin: 0 auto;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0) 50%, #fff 60%),
+    url("../images/Hero-image.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
 .hero-content {
-  padding: 16px 605px 126px 106px;
+  padding: 122px 605px 126px 106px;
 }
 .hero-title {
   font-family: Play, sans-serif;
@@ -218,6 +229,24 @@ button:hover {
   height: 56px;
   background-image: url("../images/Star-large.png");
   content: "";
+  pointer-events: auto;
+}
+.content-block:hover::after {
+  animation-name: spin-scale-hover;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes spin-scale-hover {
+  0% {
+    transform: rotate(0) scale(1);
+  }
+  20% {
+    transform: rotate(10deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1.3);
+  }
 }
 
 .about-us-block {
@@ -244,6 +273,12 @@ button:hover {
   height: 35px;
   background-image: url("../images/Star-medium.png");
   content: "";
+  pointer-events: auto;
+}
+.photo-block:hover::before {
+  animation-name: spin-scale-hover;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
 }
 .photo-block::after {
   position: absolute;
@@ -253,6 +288,11 @@ button:hover {
   height: 15px;
   background-image: url("../images/Star-small.png");
   content: "";
+}
+.photo-block:hover::after {
+  animation-name: spin-scale-hover;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
 }
 
 .photo-after {
@@ -324,6 +364,40 @@ button:hover {
 }
 /* Procedures section */
 
+.carousel-button {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  margin-right: 32px;
+  margin-left: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--color-primary-dark);
+  fill: var(--color-primary-dark);
+  cursor: pointer;
+  transition: background-color 0.2s, fill 0.2s, border-color 0.2s;
+}
+
+.carousel-button:hover {
+  background-color: var(--color-brand);
+  fill: var(--color-primary-light);
+  border-color: var(--color-primary-light);
+}
+
+.carousel-button.next {
+  transform: rotate(180deg);
+}
+
+.procedures-carousel {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
 .procedures-section {
   display: flex;
   flex-direction: column;
@@ -371,7 +445,7 @@ button:hover {
   align-items: center;
 }
 
-.contact-form {
+.contact-form-section {
   height: 481px;
   border-radius: 32px;
   background-color: var(--color-secondary-background);
@@ -382,20 +456,10 @@ button:hover {
   align-items: center;
 }
 
-.contacts-text {
-  font-weight: 600;
-  font-size: 22px;
-  line-height: 1.2;
-  color: var(--color-primary-light);
+.contact-form-field {
+  margin-bottom: 16px;
 }
-.contacts-text .accent {
-  color: var(--color-brand);
-}
-.contacts-text-privacy {
-  font-weight: 400;
-  font-size: 12px;
-  color: var(--color-secondary-text);
-}
+
 .contacts-text-privacy-link {
   font-weight: 400;
   font-size: 12px;
@@ -455,6 +519,7 @@ button:hover {
   font-weight: 400;
   font-size: 16px;
   text-decoration: none;
+  transition: color 0.2s;
 }
 .footer-link:hover {
   color: var(--color-brand);
@@ -465,6 +530,7 @@ button:hover {
   font-weight: 400;
   font-size: 16px;
   text-decoration: none;
+  transition: color 0.2s;
 }
 .link-adress:hover {
   color: var(--color-brand);
@@ -474,9 +540,6 @@ button:hover {
   color: var(--color-secondary-text);
   font-size: 13px;
 }
-.link-copyright:hover {
-  color: var(--color-brand);
-}
 
 .adress-social {
   display: flex;
@@ -485,12 +548,76 @@ button:hover {
 
 .footer-social-icons {
   fill: var(--color-primary-light);
+  transition: fill 0.2s;
 }
 .footer-social-icons:hover {
   fill: var(--color-brand);
 }
 
 /* Modal */
+.form-field {
+  margin-bottom: 24px;
+}
+
+.form-input {
+  font-size: 13px;
+  line-height: 1.2;
+  padding: 18px 33px;
+  width: 100%;
+  color: var(--color-primary-light);
+  background-color: transparent;
+  border: 2px solid var(--color-secondary-field);
+  border-radius: 32px;
+  height: 52px;
+  transition: background-color 0.2s;
+}
+.form-input::placeholder {
+  color: var(--color-primary-light);
+}
+
+.form-input:focus {
+  background-color: var(--color-secondary-text);
+}
+
+.form-text {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--color-primary-light);
+  margin-bottom: 32px;
+}
+.form-text .accent {
+  color: var(--color-brand);
+}
+.form-text-privacy {
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--color-secondary-text);
+  text-align: center;
+}
+.form-text-privacy-link {
+  color: var(--color-secondary-text);
+}
+.form-title {
+  color: var(--color-primary-light);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.form-button {
+  width: 300px;
+  height: 60px;
+  top: 20px;
+  left: 20px;
+  gap: 10px;
+  border-radius: 32px;
+  padding: 16px 32px;
+  margin-bottom: 8px;
+}
+.form-button:hover {
+  color: var(--color-primary-light);
+}
 
 .backdrop {
   display: flex;
@@ -514,12 +641,42 @@ button:hover {
   position: relative;
   width: 723px;
   height: 681px;
+  padding: 42px 144px;
   border-radius: 48px;
   background-color: var(--color-primary-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-form {
+  text-align: center;
 }
 
 .modal-btn-close {
+  background-color: transparent;
+  width: 32px;
+  height: 32px;
+  padding: 0;
   position: absolute;
   top: 24px;
   right: 24px;
+  border-color: transparent;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.modal-cross {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+}
+
+.modal-btn-close:hover {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--color-brand);
 }

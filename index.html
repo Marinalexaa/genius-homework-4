@@ -11,49 +11,49 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <div class="heder-hero-section">
-      <header class="header">
-        <div class="container">
-          <div class="header-container">
-            <nav class="header-nav">
-              <a href="./index.html">
-                <img src="./images/logo.png" alt="Логотип" />
-              </a>
-              <ul class="header-menu">
-                <li><a class="link" href="#about-us-section">Про нас</a></li>
-                <li><a class="link" href="#why-we-section">Чому ми</a></li>
-                <li>
-                  <a class="link" href="#procedures-section">Наші процедури</a>
-                </li>
-                <li><a class="link" href="#contacts-section">Контакти</a></li>
-              </ul>
-            </nav>
-            <ul class="header-socialmedia">
+    <header class="header">
+      <div class="container">
+        <div class="header-container">
+          <nav class="header-nav">
+            <a href="./index.html">
+              <img src="./images/logo.png" alt="Логотип" />
+            </a>
+            <ul class="header-menu">
+              <li><a class="link" href="#about-us-section">Про нас</a></li>
+              <li><a class="link" href="#why-we-section">Чому ми</a></li>
               <li>
-                <a href="#">
-                  <svg class="social-icons" width="32" height="32">
-                    <use href="./images/icons.svg#icon-call"></use>
-                  </svg>
-                </a>
+                <a class="link" href="#procedures-section">Наші процедури</a>
               </li>
-              <li>
-                <a href="#">
-                  <svg class="social-icons" width="32" height="32">
-                    <use href="./images/icons.svg#icon-facebook"></use>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <svg class="social-icons" width="32" height="32">
-                    <use href="./images/icons.svg#icon-instagram"></use>
-                  </svg>
-                </a>
-              </li>
+              <li><a class="link" href="#contacts-section">Контакти</a></li>
             </ul>
-          </div>
+          </nav>
+          <ul class="header-socialmedia">
+            <li>
+              <a href="#">
+                <svg class="social-icons" width="32" height="32">
+                  <use href="./images/icons.svg#icon-call"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <svg class="social-icons" width="32" height="32">
+                  <use href="./images/icons.svg#icon-facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <svg class="social-icons" width="32" height="32">
+                  <use href="./images/icons.svg#icon-instagram"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
         </div>
-      </header>
+      </div>
+    </header>
+    <main>
       <section class="hero-section">
         <div class="container">
           <div class="hero-content">
@@ -70,8 +70,6 @@
           </div>
         </div>
       </section>
-    </div>
-    <main>
       <section class="section" id="about-us-section">
         <div class="container about-us-block">
           <div class="content-block">
@@ -153,35 +151,47 @@
             <h2 class="section-title">
               Наші <span class="accent">процедури</span>
             </h2>
-            <ul class="procedures-list">
-              <li>
-                <article class="procedures-item">
-                  <img
-                    class="procedures-image"
-                    src="./images/Masks.jpg"
-                    alt="Фото процедури маска на обличчя"
-                  />
-                </article>
-              </li>
-              <li>
-                <article class="procedures-item">
-                  <img
-                    class="procedures-image"
-                    src="./images/Injections.jpg"
-                    alt="Фото процедури інєкції"
-                  />
-                </article>
-              </li>
-              <li>
-                <article class="procedures-item">
-                  <img
-                    class="procedures-image"
-                    src="./images/Peeling.jpg"
-                    alt="Фото процедури пілінг обличчя"
-                  />
-                </article>
-              </li>
-            </ul>
+            <div class="procedures-carousel">
+              <button class="carousel-button" type="button">
+                <svg class="format-arrow" width="16" height="16">
+                  <use href="./images/icons.svg#icon-arrow"></use>
+                </svg>
+              </button>
+              <ul class="procedures-list">
+                <li>
+                  <article class="procedures-item">
+                    <img
+                      class="procedures-image"
+                      src="./images/Masks.jpg"
+                      alt="Фото процедури маска на обличчя"
+                    />
+                  </article>
+                </li>
+                <li>
+                  <article class="procedures-item">
+                    <img
+                      class="procedures-image"
+                      src="./images/Injections.jpg"
+                      alt="Фото процедури інєкції"
+                    />
+                  </article>
+                </li>
+                <li>
+                  <article class="procedures-item">
+                    <img
+                      class="procedures-image"
+                      src="./images/Peeling.jpg"
+                      alt="Фото процедури пілінг обличчя"
+                    />
+                  </article>
+                </li>
+              </ul>
+              <button class="carousel-button next" type="button">
+                <svg class="format-arrow" width="16" height="16">
+                  <use href="./images/icons.svg#icon-arrow"></use>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -204,20 +214,67 @@
                   referrerpolicy="no-referrer-when-downgrade"
                 ></iframe>
               </li>
-              <li class="contact-form">
-                <p class="contacts-text">
-                  Запишіться <span class="accent">безкоштовно</span> <br />
-                  та отримайте подарунок
-                </p>
-                <button class="contact-button" type="button">
-                  Записатись безкоштовно
-                </button>
-                <p class="contacts-text-privacy">
-                  Натискаючи на кнопку я погоджуюсь <br />
-                  <span class="contacts-text-privacy-link"
-                    >з політикою конфіденційності
-                  </span>
-                </p>
+              <li>
+                <div class="contact-form-section">
+                  <p class="form-text">
+                    Запишіться <span class="accent">безкоштовно</span> <br />
+                    та отримайте подарунок
+                  </p>
+                  <form name="contact-form" autocomplete="on">
+                    <div class="contact-form-field">
+                      <label class="form-label visualy-hidden" for="user-name">
+                        Ім'я
+                      </label>
+                      <input
+                        class="form-input"
+                        type="text"
+                        name="user-name"
+                        id="user-name"
+                        placeholder="Ваше ім'я та прізвище"
+                        required
+                        pattern="^[Є-ЯҐA-Zа-їґa-z]+\s[Є-ЯҐA-Zа-їґa-z]+$"
+                      />
+                    </div>
+
+                    <div class="form-field">
+                      <label class="form-label visualy-hidden" for="user-tel">
+                        Телефон
+                      </label>
+                      <input
+                        class="form-input"
+                        type="tel"
+                        name="user-tel"
+                        id="user-tel"
+                        placeholder="Ваш номер телефону"
+                        required
+                        pattern="^\+[0-9]{12}"
+                      />
+                    </div>
+
+                    <div class="form-field">
+                      <label class="form-label visualy-hidden" for="user-email">
+                        Електронна пошта
+                      </label>
+                      <input
+                        class="form-input"
+                        type="email"
+                        name="user-email"
+                        id="user-email"
+                        placeholder="Ваша електронна пошта"
+                        required
+                      />
+                    </div>
+                    <button class="form-button" type="submit">
+                      Записатись безкоштовно
+                    </button>
+                    <p class="form-text-privacy">
+                      Натискаючи на кнопку я погоджуюсь <br />
+                      <a class="form-text-privacy-link" href="#"
+                        >з політикою конфіденційності
+                      </a>
+                    </p>
+                  </form>
+                </div>
               </li>
             </ul>
           </div>
@@ -299,7 +356,70 @@
     </footer>
     <div class="backdrop is-hidden">
       <div class="modal">
-        <button class="modal-btn-close">Close</button>
+        <button class="modal-btn-close" type="button">
+          <svg class="modal-cross" width="16" height="16">
+            <use href="./images/icons.svg#icon-cross"></use>
+          </svg>
+        </button>
+        <h2 class="section-title form-title">Замовити дзвінок</h2>
+        <p class="form-text">
+          Запишіться <span class="accent">безкоштовно</span> <br />
+          та отримайте подарунок
+        </p>
+        <form name="modal-form" autocomplete="on">
+          <div class="form-field">
+            <label class="form-label visualy-hidden" for="user-name">
+              Ім'я
+            </label>
+            <input
+              class="form-input"
+              type="text"
+              name="user-name"
+              id="user-name"
+              placeholder="Ваше ім'я та прізвище"
+              required
+              pattern="^[Є-ЯҐA-Zа-їґa-z]+\s[Є-ЯҐA-Zа-їґa-z]+$"
+            />
+          </div>
+
+          <div class="form-field">
+            <label class="form-label visualy-hidden" for="user-tel">
+              Телефон
+            </label>
+            <input
+              class="form-input"
+              type="tel"
+              name="user-tel"
+              id="user-tel"
+              placeholder="Ваш номер телефону"
+              required
+              pattern="^\+[0-9]{12}"
+            />
+          </div>
+
+          <div class="form-field">
+            <label class="form-label visualy-hidden" for="user-email">
+              Електронна пошта
+            </label>
+            <input
+              class="form-input"
+              type="email"
+              name="user-email"
+              id="user-email"
+              placeholder="Ваша електронна пошта"
+              required
+            />
+          </div>
+          <button class="form-button" type="submit">
+            Записатись безкоштовно
+          </button>
+          <p class="form-text-privacy">
+            Натискаючи на кнопку я погоджуюсь <br />
+            <a class="form-text-privacy-link" href="#"
+              >з політикою конфіденційності
+            </a>
+          </p>
+        </form>
       </div>
     </div>
     <script src="./js/modal.js"></script>
