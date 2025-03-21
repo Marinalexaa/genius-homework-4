@@ -1,0 +1,14 @@
+.link {
+    color: var(--color-primary-dark);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.link:hover {
+    color: var(--color-brand);
+}
+
+.header-socialmedia {
+    display: flex;
+    gap: 32px;
+}

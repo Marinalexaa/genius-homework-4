@@ -1,0 +1,115 @@
+.content-block {
+    padding-top: 40px;
+    position: relative;
+}
+
+.content-block::after {
+    position: absolute;
+    top: 350px;
+    right: -240px;
+    width: 56px;
+    height: 56px;
+    background-image: url("../images/Star-large.png");
+    content: "";
+    pointer-events: auto;
+}
+
+.content-block:hover::after {
+    animation-name: spin-scale-hover;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes spin-scale-hover {
+    0% {
+        transform: rotate(0) scale(1);
+    }
+
+    20% {
+        transform: rotate(10deg) scale(1.1);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1.3);
+    }
+}
+
+.about-us-block {
+    display: flex;
+    gap: 40px;
+}
+
+.about-us-title {
+    width: 530px;
+}
+
+.photo-before {
+    border-radius: 163.5px;
+}
+
+.photo-block {
+    position: relative;
+}
+
+.photo-block::before {
+    position: absolute;
+    top: 32px;
+    right: -27px;
+    width: 35px;
+    height: 35px;
+    background-image: url("../images/Star-medium.png");
+    content: "";
+    pointer-events: auto;
+}
+
+.photo-block:hover::before {
+    animation-name: spin-scale-hover;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+
+.photo-block::after {
+    position: absolute;
+    top: 270px;
+    right: 6px;
+    width: 15px;
+    height: 15px;
+    background-image: url("../images/Star-small.png");
+    content: "";
+}
+
+.photo-block:hover::after {
+    animation-name: spin-scale-hover;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+
+.photo-after {
+    border-radius: 163.5px;
+    float: right;
+}
+
+.section-title {
+    font-family: Play, sans-serif;
+    color: var(--color-primary-dark);
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.section-title .accent {
+    color: var(--color-brand);
+}
+
+.about-us-text {
+    color: var(--color-primary-dark);
+    font-weight: 400;
+    font-size: 22px;
+    width: 670px;
+    margin-top: 40px;
+}
+
+.about-us-accent-text {
+    font-weight: 600;
+}

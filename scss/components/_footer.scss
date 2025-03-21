@@ -1,0 +1,81 @@
+.footer {
+    position: relative;
+    background-color: var(--color-primary-dark);
+}
+
+.footer::after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 247px;
+    height: 152px;
+    background-image: url("../images/Footer-image.png");
+    content: "";
+}
+
+.footer-container {
+    display: flex;
+    gap: 186px;
+    padding: 56px 0;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.adress-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer-policy {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer-link {
+    color: var(--color-primary-light);
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-link:hover {
+    color: var(--color-brand);
+}
+
+.link-adress {
+    color: var(--color-primary-light);
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.link-adress:hover {
+    color: var(--color-brand);
+}
+
+.link-copyright {
+    color: var(--color-secondary-text);
+    font-size: 13px;
+}
+
+.adress-social {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-social-icons {
+    fill: var(--color-primary-light);
+    transition: fill 0.2s;
+}
+
+.footer-social-icons:hover {
+    fill: var(--color-brand);
+}
